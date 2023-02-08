@@ -1,7 +1,7 @@
 require 'rspec'
 require './lib/dealership'
 
-Rspec.describe Dealership do
+RSpec.describe Dealership do
   describe '#initialize' do
     before(:each) do
       @dealership = Dealership.new("Acme Auto", "123 Main Street")
