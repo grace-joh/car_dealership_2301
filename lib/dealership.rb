@@ -31,4 +31,11 @@ class Dealership
     @inventory.each{ |car| total_value += car.total_cost}
     total_value
   end
+
+  def details
+    details = { 
+      "total_value" => total_value,
+      "address" => @address
+    }
+  end
 end
