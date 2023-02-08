@@ -21,4 +21,8 @@ class Dealership
   def has_inventory?
     inventory_count != 0
   end
+
+  def cars_by_make(make)
+    @inventory.select{|car| car.make == make}
+  end
 end
