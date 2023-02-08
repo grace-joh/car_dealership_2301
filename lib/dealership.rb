@@ -38,4 +38,10 @@ class Dealership
       "address" => @address
     }
   end
+    
+  def average_price_of_car
+    return "0" if inventory_count == 0
+    average = (total_value / inventory_count)
+    average.to_s.chars.reverse.each_slice(3).map(&:join).join(',').reverse
+  end
 end
