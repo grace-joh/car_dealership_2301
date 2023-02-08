@@ -44,4 +44,8 @@ class Dealership
     average = (total_value / inventory_count)
     average.to_s.chars.reverse.each_slice(3).map(&:join).join(',').reverse
   end
+
+  def cars_sorted_by_price
+    @inventory.sort_by{ |car| car.total_cost }
+  end
 end
