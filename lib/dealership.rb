@@ -25,4 +25,10 @@ class Dealership
   def cars_by_make(make)
     @inventory.select{|car| car.make == make}
   end
+
+  def total_value
+    total_value = 0
+    @inventory.each{ |car| total_value += car.total_cost}
+    total_value
+  end
 end
