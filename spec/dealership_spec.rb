@@ -41,4 +41,23 @@ RSpec.describe Dealership do
       expect(@dealership.inventory_count).to eq(2)
     end
   end
+
+  describe '#has_inventory?' do
+    it 'has default false' do
+      expect(@dealership.has_inventory?).to eq(false)
+    end
+
+    it 'returns true if cars are added' do
+      car_1 = Car.new("Ford Mustang", 1500, 36)
+      car_2 = Car.new("Toyota Prius", 1000, 48)
+      car_3 = Car.new("Toyota Tercel", 500, 48)
+      car_4 = Car.new("Chevrolet Bronco", 1250, 24)
+      @dealership.add_car(car_1)
+      @dealership.add_car(car_2)
+      @dealership.add_car(car_3)
+      @dealership.add_car(car_4)
+
+      expect(@dealership.has_inventory?).to eq(true)
+    end
+  end
 end
